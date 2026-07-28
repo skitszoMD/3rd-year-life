@@ -1,0 +1,63 @@
+// Baryabols
+$primary: #00124dd7;
+$secondary: #ffffff;
+$padding: 20px;
+
+// Mixins
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  @include center;
+  flex-direction: column;
+  background: $primary;
+  color: $secondary;
+  padding: $padding;
+  height: 100vh;
+  text-align: center;
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: $secondary;
+    color: $primary;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background: darken($secondary, 20%);
+      color: darken($primary, 20%);
+    }
+  }
+}
+
+// Responsive Page
+@media (max-width: 768px) {
+  header {
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}

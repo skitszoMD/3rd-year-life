@@ -1,0 +1,30 @@
+@mixin input-style {
+width: 100%;
+padding: 10px;
+border: 1px solid $border-color;
+border-radius: $input-radius;
+font-size: 14px;
+font-family: inherit;
+
+&:focus {
+    outline: none;
+    border-color: $primary-color;
+}
+
+}
+
+@mixin button-style {
+width: 100%;
+padding: 11px;
+border: none;
+border-radius: $input-radius;
+background-color: $primary-color;
+color: white;
+font-size: 16px;
+cursor: pointer;
+
+&:hover {
+    background-color: $primary-hover;
+}
+
+}

@@ -1,0 +1,57 @@
+.container {
+width: $container-width;
+max-width: 90%;
+margin: 50px auto;
+padding: 25px;
+
+background-color: $container-color;
+border-radius: $border-radius;
+
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+// Nested heading
+h1 {
+    text-align: center;
+    color: $text-color;
+    margin-bottom: 25px;
+}
+
+// Nested form styles
+form {
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: $text-color;
+    }
+
+    // Using the input mixin
+    input {
+        @include input-style;
+    }
+
+    textarea {
+        @include input-style;
+        resize: vertical;
+    }
+
+    // Using the button mixin
+    button {
+        @include button-style;
+        margin-top: 10px;
+    }
+}
+
+// Confirmation message
+#confirmation {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+}

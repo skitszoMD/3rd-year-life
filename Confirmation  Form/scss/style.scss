@@ -1,0 +1,14 @@
+@import "variables.scss";
+@import "mixins.scss";
+@import "form.scss";
+
+* {
+  box-sizing: border-box;
+  }
+
+body {
+font-family: Arial, sans-serif;
+background-color: $background-color;
+margin: 0;
+padding: 0;
+}

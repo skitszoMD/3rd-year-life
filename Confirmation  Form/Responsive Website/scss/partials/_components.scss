@@ -1,0 +1,164 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+// HEADER
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba($white, 0.96);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid $border;
+
+
+    .nav-container {
+        min-height: 74px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+// LOGO
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 0.55rem;
+
+    color: $blue-dark;
+
+    font-size: 1.35rem;
+    font-weight: 900;
+
+    text-decoration: none;
+
+
+    strong {
+        color: $yellow;
+
+        text-shadow:
+            0 1px 0 $blue-dark;
+    }
+
+
+    .logo-icon {
+        display: grid;
+        place-items: center;
+
+        width: 34px;
+        height: 34px;
+
+        border-radius: $radius-small;
+
+        color: $blue-dark;
+        background: $yellow;
+
+        font-size: 1.1rem;
+    }
+}
+
+// NAVIGATION
+
+.nav {
+    display: flex;
+
+    gap: 1.5rem;
+
+
+    a {
+        color: $text-dark;
+
+        font-weight: 700;
+
+        text-decoration: none;
+
+        transition: color 0.2s ease;
+
+
+        &:hover {
+            color: $blue;
+        }
+    }
+}
+
+// MOBILE MENU BUTTON
+
+.nav-toggle {
+    display: none;
+
+    padding: 0.5rem;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+
+    span {
+        display: block;
+
+        width: 25px;
+        height: 2px;
+
+        margin: 5px 0;
+
+        background: $blue-dark;
+    }
+}
+
+// BUTTONS
+
+.btn,
+.learn-btn,
+.tip-btn {
+    @include button;
+}
+
+
+.btn-primary {
+    color: $blue-dark;
+
+    background: $yellow;
+}
+
+
+.btn-secondary {
+    color: $blue-dark;
+
+    background: $white;
+
+    border: 1px solid $border;
+}
+
+
+.learn-btn {
+    padding: 0;
+
+    color: $blue;
+
+    background: transparent;
+
+    box-shadow: none;
+
+
+    &:hover {
+        transform: translateX(4px);
+
+        box-shadow: none;
+    }
+}
+
+
+.tip-btn {
+    color: $blue-dark;
+
+    background: $yellow;
+}

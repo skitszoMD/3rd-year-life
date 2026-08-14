@@ -1,0 +1,9 @@
+// Main Sass file
+// This file only imports the partials.
+
+@use "partials/variables" as *;
+@use "partials/mixins" as *;
+@use "partials/base";
+@use "partials/components";
+@use "partials/sections";
+@use "partials/responsive";

@@ -1,0 +1,36 @@
+@use "variables" as *;
+
+// Reusable container
+@mixin container {
+    width: min(100% - 2rem, $container-width);
+    margin-inline: auto;
+}
+
+// Reusable button styling
+@mixin button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.85rem 1.3rem;
+
+    border: none;
+    border-radius: 999px;
+
+    font: inherit;
+    font-weight: 800;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 8px 20px rgba(20, 100, 196, 0.15);
+    }
+}

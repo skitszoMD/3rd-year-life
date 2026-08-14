@@ -1,0 +1,483 @@
+// HERO
+@use "variables" as *;
+@use "mixins" as *;
+
+.hero {
+    min-height: 78vh;
+
+    display: grid;
+    align-items: center;
+
+    padding: 5rem 0;
+
+    background:
+        radial-gradient(
+            circle at 75% 25%,
+            rgba($yellow, 0.32),
+            transparent 27%
+        ),
+        $white;
+
+
+    .hero-grid {
+        display: grid;
+
+        grid-template-columns:
+            1.05fr
+            0.95fr;
+
+        gap: 3rem;
+
+        align-items: center;
+    }
+
+
+    h1 {
+        margin: 0;
+
+        font-size:
+            clamp(
+                3.4rem,
+                8vw,
+                6.7rem
+            );
+
+        line-height: 0.92;
+
+        letter-spacing: -0.065em;
+
+
+        span {
+            color: $blue;
+        }
+    }
+}
+
+
+.hero-description {
+    max-width: 600px;
+
+    margin: 1.6rem 0 2rem;
+
+    color: $text-muted;
+
+    font-size: 1.1rem;
+}
+
+
+.hero-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.75rem;
+}
+
+
+.action-message {
+    min-height: 1.5em;
+
+    margin-top: 1rem;
+
+    color: $blue;
+
+    font-weight: 800;
+}
+
+// PET ILLUSTRATION
+
+.pet-illustration {
+    position: relative;
+
+    min-height: 390px;
+
+    overflow: hidden;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid $border;
+
+    border-radius: $radius-large;
+
+    background: $blue-light;
+
+
+    .sun {
+        position: absolute;
+
+        width: 180px;
+        height: 180px;
+
+        top: 35px;
+        right: 45px;
+
+        border-radius: 50%;
+
+        background: $yellow;
+
+        opacity: 0.65;
+    }
+
+
+    .blob {
+        position: absolute;
+
+        border-radius: 50%;
+
+        background: rgba($blue, 0.1);
+    }
+
+
+    .blob-one {
+        width: 180px;
+        height: 180px;
+
+        left: -50px;
+        bottom: -50px;
+    }
+
+
+    .blob-two {
+        width: 100px;
+        height: 100px;
+
+        right: -20px;
+        bottom: 25px;
+    }
+
+
+    .pet-card {
+        position: absolute;
+
+        display: grid;
+        place-items: center;
+
+        width: 150px;
+        height: 150px;
+
+        border: 1px solid $border;
+
+        border-radius: 35px;
+
+        background: $white;
+
+        box-shadow:
+            0 18px 40px rgba($blue-dark, 0.12);
+
+        font-size: 5rem;
+    }
+
+
+    .dog {
+        transform:
+            rotate(-8deg)
+            translate(-55px, 15px);
+    }
+
+
+    .cat {
+        transform:
+            rotate(8deg)
+            translate(75px, 65px);
+    }
+
+
+    .heart {
+        position: absolute;
+
+        top: 90px;
+        left: 47%;
+
+        color: $yellow;
+
+        text-shadow:
+            0 1px 0 $blue-dark;
+
+        font-size: 2rem;
+    }
+
+
+    p {
+        position: absolute;
+
+        bottom: 20px;
+
+        margin: 0;
+
+        color: $blue-dark;
+
+        font-weight: 900;
+    }
+}
+
+// SHOP SECTION
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 2rem;
+
+    align-items: end;
+
+    margin-bottom: 2rem;
+
+
+    h2 {
+        margin: 0;
+
+        font-size:
+            clamp(
+                2rem,
+                5vw,
+                3.5rem
+            );
+
+        line-height: 1;
+
+        letter-spacing: -0.04em;
+    }
+
+
+    > p {
+        max-width: 300px;
+
+        margin: 0;
+
+        color: $text-muted;
+    }
+}
+
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 1rem;
+}
+
+
+.card {
+    padding: 2rem;
+
+    border: 1px solid $border;
+
+    border-radius: $radius-medium;
+
+    background: $white;
+
+    box-shadow:
+        0 8px 24px rgba($blue-dark, 0.04);
+
+
+    .card-icon {
+        font-size: 2rem;
+    }
+
+
+    h3 {
+        margin:
+            1.5rem 0
+            0.5rem;
+
+        font-size: 1.45rem;
+    }
+
+
+    p {
+        color: $text-muted;
+    }
+}
+
+// SERVICE DETAILS
+
+.service-details {
+    margin-top: 1rem;
+
+    padding: 1.25rem 1.5rem;
+
+    border: 1px solid $yellow;
+
+    border-radius: $radius-medium;
+
+    color: $blue-dark;
+
+    background: $yellow-light;
+
+
+    p {
+        margin: 0.25rem 0 0;
+
+        color: $text-dark;
+    }
+}
+
+// PET CARE SECTION
+
+.care {
+    color: $white;
+
+    background: $blue;
+
+
+    .care-grid {
+        display: grid;
+
+        grid-template-columns:
+            0.85fr
+            1.15fr;
+
+        gap: 4rem;
+
+        align-items: center;
+    }
+
+
+    h2 {
+        margin: 0;
+
+        font-size:
+            clamp(
+                2.3rem,
+                5vw,
+                4rem
+            );
+
+        line-height: 1;
+    }
+
+
+    .eyebrow {
+        color: $yellow;
+    }
+}
+
+
+.care-panel {
+    padding: 2rem;
+
+    border: 1px solid rgba($white, 0.2);
+
+    border-radius: $radius-medium;
+
+    background: rgba($white, 0.1);
+
+
+    .care-number {
+        color: $yellow;
+
+        font-weight: 900;
+    }
+
+
+    h3 {
+        margin:
+            1rem 0
+            0.5rem;
+
+        font-size: 1.6rem;
+    }
+
+
+    p {
+        color: $blue-light;
+    }
+
+
+    .tip-result {
+        min-height: 1.5em;
+
+        color: $yellow;
+
+        font-weight: 800;
+    }
+}
+
+// CONTACT
+
+.contact-card {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 3rem;
+
+    padding: 3rem;
+
+    border: 1px solid $border;
+
+    border-radius: $radius-large;
+
+    background: $white;
+
+    box-shadow:
+        0 8px 24px rgba($blue-dark, 0.04);
+
+
+    h2 {
+        margin:
+            0 0
+            0.8rem;
+
+        font-size:
+            clamp(
+                2rem,
+                4vw,
+                3rem
+            );
+
+        line-height: 1;
+    }
+}
+
+
+.contact-info {
+    display: grid;
+
+    gap: 1rem;
+
+    align-content: center;
+
+
+    div {
+        display: flex;
+
+        gap: 0.8rem;
+
+        align-items: center;
+
+        padding: 1rem;
+
+        border-radius: $radius-small;
+
+        background: $blue-light;
+    }
+}
+
+// FOOTER
+
+.footer {
+    padding: 1.5rem 0;
+
+    color: $blue-light;
+
+    background: $blue-dark;
+
+    border-top:
+        5px solid $yellow;
+
+
+    .footer-content {
+        display: flex;
+
+        justify-content: space-between;
+
+        gap: 1rem;
+    }
+}

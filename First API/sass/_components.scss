@@ -1,0 +1,70 @@
+@use "variables" as *;
+
+// Load Button
+.load-btn {
+  display: block;
+  margin: $spacing-md auto;
+  padding: 12px 24px;
+  background: $primary-color;
+  color: white;
+  border: none;
+  border-radius: $border-radius;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: $primary-hover;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// Status Message
+#status {
+  text-align: center;
+  margin: $spacing-md 0;
+  font-size: 16px;
+  font-weight: 500;
+
+  &.error {
+    color: $error-color;
+  }
+}
+
+// User Cards Grid
+.users {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-md;
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.user-card {
+  background: $card-background;
+  border-radius: $border-radius;
+  padding: $spacing-md;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  h2 {
+    margin-bottom: $spacing-sm;
+    color: $primary-color;
+    font-size: 1.25rem;
+  }
+
+  p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+
+    strong {
+      color: $text-color;
+    }
+  }
+}

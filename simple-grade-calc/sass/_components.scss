@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: $background;
+    color: $text;
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.card {
+    background: $white;
+    padding: 25px;
+    border: 1px solid $border;
+}
+
+/* Header */
+
+.header {
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    margin: 0 0 5px;
+    font-size: 24px;
+}
+
+.header p {
+    margin: 0;
+    color: $muted;
+}
+
+/* Sections */
+
+.section-title {
+    margin: 20px 0 10px;
+}
+
+.section-title h2 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.section-title span {
+    font-size: 12px;
+    color: $muted;
+}
+
+/* Form */
+
+.student-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 9px;
+
+    border: 1px solid $border;
+}
+
+.form-group input:focus {
+    outline: 1px solid $primary;
+}
+
+/* Grades */
+
+.grades {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+/* Button */
+
+.calculate-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+
+    background: $primary;
+    color: $white;
+
+    border: none;
+    cursor: pointer;
+}
+
+.calculate-btn:hover {
+    opacity: 0.85;
+}
+
+/* Result */
+
+.result {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid $border;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-header h2 {
+    margin: 3px 0 0;
+    font-size: 20px;
+}
+
+.result-label {
+    font-size: 11px;
+    color: $muted;
+}
+
+.status-badge {
+    font-weight: bold;
+}
+
+.passed .status-badge {
+    color: $success;
+}
+
+.failed .status-badge {
+    color: $danger;
+}
+
+.student-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.student-details span,
+.grades-display span {
+    display: block;
+    font-size: 11px;
+    color: $muted;
+}
+
+.student-details strong {
+    font-size: 14px;
+}
+
+.grades-display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid $border;
+}
+
+.grades-display > div {
+    padding: 10px;
+    text-align: center;
+    border-right: 1px solid $border;
+}
+
+.grades-display > div:last-child {
+    border-right: none;
+}
+
+.grades-display strong {
+    display: block;
+    margin-top: 3px;
+}
+
+.average {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.average span {
+    display: block;
+    font-size: 12px;
+    color: $muted;
+}
+
+.average strong {
+    font-size: 28px;
+}
+
+.failed .average strong {
+    color: $danger;
+}
+
+.passing-note {
+    text-align: center;
+    font-size: 12px;
+    color: $muted;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .container {
+        margin: 20px auto;
+    }
+
+    .student-fields,
+    .grades,
+    .student-details {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .grades-display {
+        grid-template-columns: 1fr;
+    }
+
+    .grades-display > div {
+        border-right: none;
+        border-bottom: 1px solid $border;
+    }
+
+    .grades-display > div:last-child {
+        border-bottom: none;
+    }
+}

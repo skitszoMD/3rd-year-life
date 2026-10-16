@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flora &amp; Froth</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Great+Vibes&family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- /login -->
+  <section id="login" class="view auth" hidden>
+    <form class="auth-card" id="loginForm">
+      <h1>Log in</h1>
+      <label>Username <input name="username" required autocomplete="username"></label>
+      <label>Password <input name="password" type="password" required autocomplete="current-password"></label>
+      <p class="error" role="alert"></p>
+      <button class="pill-btn">Login</button>
+      <a href="#/forgotpass" class="small-link">Forgot password?</a>
+    </form>
+  </section>
+
+  <!-- /forgotpass -->
+  <section id="forgot" class="view auth" hidden>
+    <form class="auth-card" id="forgotForm">
+      <h1>Forgot password</h1>
+      <label>Username <input name="username" required></label>
+      <label>Password <input name="password" type="password" required autocomplete="new-password"></label>
+      <label>Confirm Password <input name="confirm" type="password" required autocomplete="new-password"></label>
+      <p class="error" role="alert"></p>
+      <button class="pill-btn">Done</button>
+    </form>
+  </section>
+
+  <!-- Catalog: Home / Coffee / Flowers / About Us (users and admin) -->
+  <div id="shop" class="view" hidden>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="#/" class="logo">Flora &amp; Froth</a>
+
+        <nav id="mainNav" class="nav" aria-label="Main">
+          <a href="#/" data-nav="home">Home</a>
+          <a href="#/coffee" data-nav="coffee">Coffee</a>
+          <a href="#/flowers" data-nav="flowers">Flowers</a>
+          <a href="#/about" data-nav="about">About Us</a>
+        </nav>
+
+        <div class="who">
+          <a href="#/login" id="loginLink" class="who-name">Log in</a>
+          <span id="adminName" class="who-name" hidden>Admin</span>
+          <button id="avatar" class="avatar" aria-label="Account menu" hidden></button>
+          <button id="logout" class="logout" hidden>Logout</button>
+        </div>
+
+        <button id="menuToggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <div class="toolbar">
+        <div>
+          <h1 id="pageTitle">All products</h1>
+          <p id="pageCount" class="count"></p>
+        </div>
+        <button id="addBtn" class="add" hidden>+ Add product</button>
+      </div>
+      <div id="grid" class="grid"></div>
+    </main>
+
+    <footer id="about" class="footer">
+      <div class="footer-inner">
+        <section class="footer-about">
+          <h2>About Us</h2>
+          <p>Flora &amp; Froth is a small shop for people who love fresh flowers and a good cup of coffee. We keep both in one catalog, so you can find a bouquet for someone special or your next favorite brew in the same place.</p>
+        </section>
+        <nav class="footer-links" aria-label="Footer">
+          <h2>Browse</h2>
+          <a href="#/">Home</a>
+          <a href="#/coffee">Coffee</a>
+          <a href="#/flowers">Flowers</a>
+        </nav>
+      </div>
+      <p class="copyright">&copy; Flora &amp; Froth</p>
+    </footer>
+  </div>
+
+  <!-- Add / edit product (admin) -->
+  <dialog id="modal">
+    <form id="productForm">
+      <h2 id="modalTitle">Add new product</h2>
+      <div class="editor">
+        <span class="field-label">Product image</span>
+        <!-- Fixed frame = same 4:3 area customers see on the card -->
+        <div id="frame" class="img-frame" tabindex="0" aria-label="Image frame. Drag the image, or use arrow keys, to choose what shows.">
+          <img id="edImg" alt="" hidden draggable="false">
+          <p id="edHint">Upload an image, then drag it to choose what shows.</p>
+        </div>
+        <p class="tip">The box is the exact area shown on the catalog card. Drag the image to move it.</p>
+        <div class="ed-controls">
+          <button type="button" id="pickBtn" class="ed-btn">Upload image</button>
+          <input type="file" id="file" accept="image/*" hidden>
+          <button type="button" id="zoomOut" class="ed-btn ed-sq" aria-label="Zoom out">&minus;</button>
+          <output id="zoomVal" aria-live="polite">100%</output>
+          <button type="button" id="zoomIn" class="ed-btn ed-sq" aria-label="Zoom in">+</button>
+          <button type="button" id="resetImg" class="ed-btn">Reset position</button>
+        </div>
+        <div class="mini">
+          <span>Catalog preview</span>
+          <div class="img"><img id="miniImg" alt="" hidden></div>
+        </div>
+      </div>
+      <label>Category
+        <select name="category"><option value="flowers">Flowers</option><option value="coffee">Coffee</option></select>
+      </label>
+      <label>Product name <input name="name" required></label>
+      <label>Description <textarea name="desc" rows="3"></textarea></label>
+      <label>Price <input name="price" type="number" min="0" step="0.01" required></label>
+      <div class="modal-actions">
+        <button type="button" id="cancel" class="link-btn">Cancel</button>
+        <button class="submit">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
